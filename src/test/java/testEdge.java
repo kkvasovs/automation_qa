@@ -4,13 +4,26 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
+import java.net.URL;
+
 public class testEdge {
+
+    EdgeDriver driver = new EdgeDriver();
+    public static final String GOOGLE_URL = "https://www.google.lv/?hl=en";
+
+    @AfterMethod
+    public void tearDown() {
+        driver.close();
+        driver.quit();
+    }
+
     @Test
-    public void edgeTest(){
-        EdgeDriver driver = new EdgeDriver();
-        driver.get("https://www.google.lv/?hl=en");
+    public void edgeTest() {
+
+        driver.get(GOOGLE_URL);
         WebElement acceptButton = driver.findElement(By.xpath("//button//div[contains(text(),'Accept all')]"));
         acceptButton.click();
         WebElement searchField = driver.findElement(By.name("q"));
@@ -18,7 +31,6 @@ public class testEdge {
         searchField.sendKeys(Keys.ENTER);
         Assert.assertEquals(driver.getTitle(), "acodemy - Google Search");
 
-        driver.close();
-        driver.quit();
+
     }
 }
