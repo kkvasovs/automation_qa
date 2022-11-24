@@ -32,5 +32,6 @@ public class testEdge {
         Assert.assertEquals(driver.getTitle(), "acodemy - Google Search");
 
 
+
     }
 }
