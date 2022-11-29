@@ -16,7 +16,7 @@ public class TestSauceDemo {
 
     @BeforeMethod(description = "Preconditions")
     public void initialize() {
-        WebDriverManager.edgedriver().setup();
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
