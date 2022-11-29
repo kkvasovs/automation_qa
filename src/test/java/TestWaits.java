@@ -23,12 +23,12 @@ public class TestWaits {
         wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
 
-    @Test
-    public void testWaiter(){
-        driver.get(Generic.GOOGLE_URL);
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("element_that_is_not_in_place")));
-//        driver.findElement(By.xpath("element_that_is_not_in_place"));
-    }
+//    @Test
+//    public void testWaiter(){
+//        driver.get(Generic.GOOGLE_URL);
+//        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("element_that_is_not_in_place")));
+////        driver.findElement(By.xpath("element_that_is_not_in_place"));
+//    }
 
     @AfterMethod
     public void after(){

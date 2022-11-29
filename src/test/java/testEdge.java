@@ -20,7 +20,7 @@ public class testEdge {
         driver.quit();
     }
 
-    @Test
+    @Test(enabled = false)
     public void edgeTest() {
 
         driver.get(GOOGLE_URL);
