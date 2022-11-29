@@ -31,8 +31,5 @@ public class testEdge {
         searchField.sendKeys("acodemy");
         searchField.sendKeys(Keys.ENTER);
         Assert.assertEquals(driver.getTitle(), "acodemy - Google Search");
-
-
-
     }
 }
