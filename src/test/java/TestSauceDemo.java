@@ -1,5 +1,6 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.Assert;
@@ -20,16 +21,16 @@ import static lv.acodemy.constants.Generic.SAUCE_URL;
 
 public class TestSauceDemo {
 
-    EdgeDriver driver;
+    ChromeDriver driver;
     LoginPage loginPage;
     InventoryPage inventoryPage;
 
     @BeforeMethod(description = "Preconditions")
     public void initialize() {
         WebDriverManager.edgedriver().setup();
-        EdgeOptions options = new EdgeOptions();
+        ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
-        driver = new EdgeDriver(options);
+        driver = new ChromeDriver(options);
         driver.get(SAUCE_URL);
         loginPage = new LoginPage(driver);
         inventoryPage = new InventoryPage(driver);

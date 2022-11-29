@@ -2,6 +2,7 @@ import net.bytebuddy.asm.Advice;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -11,7 +12,7 @@ import java.net.URL;
 
 public class testEdge {
 
-    EdgeDriver driver = new EdgeDriver();
+    ChromeDriver driver = new ChromeDriver();
     public static final String GOOGLE_URL = "https://www.google.lv/?hl=en";
 
     @AfterMethod
